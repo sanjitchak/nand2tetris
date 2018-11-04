@@ -1,0 +1,13 @@
+function Main.main 1
+call Snake.newInstance 0
+pop temp 0
+call Snake.getInstance 0
+pop local 0
+push local 0
+call Snake.run 1
+pop temp 0
+push local 0
+call Snake.dispose 1
+pop temp 0
+push constant 0
+return

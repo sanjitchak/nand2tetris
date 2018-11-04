@@ -1,0 +1,215 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Keyboard.jack
+
+/**
+ * A library for handling user input from the keyboard.
+ */
+class Keyboard {
+static int column,row;
+    /** Initializes the keyboard. */
+    function void init() {
+        let column = 0;
+        let row = 0;
+        return;
+    } 
+
+    /**
+     * Returns the character of the currently pressed key on the keyboard;
+     * if no key is currently pressed, returns 0.
+     *
+     * Recognizes all ASCII characters, as well as the following keys:
+     * new line = 128 = String.newline()
+     * backspace = 129 = String.backspace()
+     * left arrow = 130
+     * up arrow = 131
+     * right arrow = 132
+     * down arrow = 133
+     * home = 134
+     * End = 135
+     * page up = 136
+     * page down = 137
+     * insert = 138
+     * delete = 139
+     * ESC = 140
+     * F1 - F12 = 141 - 152
+     */
+    function char keyPressed() {
+        if (Memory.peek(24576) = 0)
+        {
+          return 0;
+        }
+        else 
+        {
+return Memory.peek(24576);
+        }
+    }
+
+    /**								
+     * Waits until a key is pressed on the keyboard and released,
+     * then echoes the key to the screen, and returns the character 
+     * of the pressed key.
+    */
+   
+    /** Displays the given character at the cursor location,
+     *  and advances the cursor one column forward. */
+    function char readChar() {
+var char c;
+
+while(Keyboard.keyPressed()=0)
+{
+}
+let c = Keyboard.keyPressed();
+while(~(Keyboard.keyPressed()=0))
+{
+    }
+    
+do Output.printChar(c);
+   
+
+    
+    return c;
+}
+    /**								
+     * Displays the message on the screen, reads from the keyboard the entered
+     * text until a newline character is detected, echoes the text to the screen,
+     * and returns its value. Also handles user backspaces.
+     */
+    function String readLine(String message) {
+        var char c;
+        var String s;
+        let s = String.new(60);
+        do Output.printString(message);
+        
+        while(true)
+        {
+let c = Keyboard.readChar();
+if(c = 128)
+{
+    do Output.println();
+    return s;
+    }
+if(c = 129)
+{
+do s.eraseLastChar();
+do s.eraseLastChar();
+do Output.backSpace();
+}
+else 
+{
+   do s.appendChar(c);
+}
+            }
+        return s;
+    }   
+
+    /**								
+     * Displays the message on the screen, reads from the keyboard the entered
+     * text until a newline character is detected, echoes the text to the screen,
+     * and returns its integer value (until the first non-digit character in the
+     * entered text is detected). Also handles user backspaces. 
+     */
+    function int readInt(String message) {
+    var char c;
+    
+        var int s,dash;
+        let s = 0;
+        let dash =0;
+        
+        do Output.printString(message);
+        while(true)
+        {
+let c = Keyboard.readChar();
+if(c = 128)
+{
+    do Output.println();
+
+    if(dash = 1)
+    {
+        let s = s*-1;
+    }
+    return s;
+    }
+if(c = 129)
+{
+let s = s/10;
+let s = s/10;
+do Output.backSpace();
+}
+else 
+{
+ if(((c < 58) & (c > 47)) | (c = 45) )
+     {
+   if(c=45)
+   {
+       let dash =1;
+   }
+   if(c = 48)
+   {
+       let s = s*10;
+   }
+   if(c = 49)
+   {
+       let s = s*10;
+       let s = s+1;
+   }    
+
+   if(c = 50)
+   {
+       let s = s*10;
+       let s = s+2;
+   }    
+   if(c = 51)
+   {
+       let s = s*10;
+       let s = s+3;
+   }    
+   if(c = 52)
+   {
+       let s = s*10;
+       let s = s+4;
+   }    
+   if(c = 53)
+   {
+       let s = s*10;
+       let s = s+5;
+   }    
+   if(c = 54)
+   {
+       let s = s*10;
+       let s = s+6;
+   }    
+   if(c = 55)
+   {
+       let s = s*10;
+       let s = s+7;
+   }    
+   if(c = 56)
+   {
+       let s = s*10;
+       let s = s+8;
+   }    
+   if(c = 57)
+   {
+       let s = s*10;
+       let s = s+9;
+   }    
+}
+else{
+    if(dash = 1)
+    {
+        let s = s*-1;
+    }
+    return s;
+}
+}
+            }
+    if(dash = 1)
+    {
+        let s = s*-1;
+    }
+        return s;
+    
+    }
+}

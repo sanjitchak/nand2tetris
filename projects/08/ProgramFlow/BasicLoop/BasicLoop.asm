@@ -1,0 +1,119 @@
+//push const
+@0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+//pop local
+@SP
+M=M-1
+A=M
+D=M
+@LCL
+A=M
+M=D
+//label 
+(LOOP_START)
+//push arg
+@ARG
+D=M
+A=D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+//push local
+@LCL
+D=M
+A=D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+//add
+@SP
+M=M-1
+A=M
+D=M
+A=A-1
+M=D+M
+//pop local
+@SP
+M=M-1
+A=M
+D=M
+@LCL
+A=M
+M=D
+//push arg
+@ARG
+D=M
+A=D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+//push const
+@1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+//sub
+@SP
+M=M-1
+A=M
+A=A-1
+D=M
+A=A+1
+M=D-M
+D=M
+A=A-1
+M=D
+//pop arg
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D
+//push arg
+@ARG
+D=M
+A=D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+//label jump 
+@SP
+A=M
+A=A-1
+D=M
+@SP
+M=M-1
+@LOOP_START
+D;JGT
+//push local
+@LCL
+D=M
+A=D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1

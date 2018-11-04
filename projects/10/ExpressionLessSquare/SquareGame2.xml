@@ -1,0 +1,707 @@
+<class>
+ <keyword> class </keyword>
+ <kind> class </kind>
+ <identifier> SquareGame </identifier>
+ <symbol> { </symbol>
+<classVarDec>
+ <keyword> field </keyword>
+ <identifier> Square </identifier>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> defined </status>
+ <identifier> square </identifier>
+ <symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+ <keyword> field </keyword>
+ <keyword> int </keyword>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> defined </status>
+ <identifier> direction </identifier>
+ <symbol> ; </symbol>
+</classVarDec>
+<subroutineDec>
+ <keyword> constructor </keyword>
+ <kind> subroutine </kind>
+ <identifier> SquareGame </identifier>
+ <kind> subroutine </kind>
+ <identifier> new </identifier>
+ <symbol> ( </symbol>
+<parameterList>
+</parameterList>
+ <symbol> ) </symbol>
+<subroutineBody>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+<returnStatement>
+ <keyword> return </keyword>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</returnStatement>
+</statements>
+ <symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+ <keyword> method </keyword>
+ <keyword> void </keyword>
+ <kind> subroutine </kind>
+ <identifier> dispose </identifier>
+ <symbol> ( </symbol>
+<parameterList>
+</parameterList>
+ <symbol> ) </symbol>
+<subroutineBody>
+ <symbol> { </symbol>
+<statements>
+<doStatement>
+ <keyword> do </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> dispose </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+<doStatement>
+ <keyword> do </keyword>
+ <kind> class </kind>
+ <identifier> Memory </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> deAlloc </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+</term>
+</expression>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+ <keyword> return </keyword>
+ <symbol> ; </symbol>
+</returnStatement>
+</statements>
+ <symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+ <keyword> method </keyword>
+ <keyword> void </keyword>
+ <kind> subroutine </kind>
+ <identifier> moveSquare </identifier>
+ <symbol> ( </symbol>
+<parameterList>
+</parameterList>
+ <symbol> ) </symbol>
+<subroutineBody>
+ <symbol> { </symbol>
+<statements>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<doStatement>
+ <keyword> do </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> moveUp </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<doStatement>
+ <keyword> do </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> moveDown </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<doStatement>
+ <keyword> do </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> moveLeft </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<doStatement>
+ <keyword> do </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> moveRight </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<doStatement>
+ <keyword> do </keyword>
+ <kind> class </kind>
+ <identifier> Sys </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> wait </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+</term>
+</expression>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+ <keyword> return </keyword>
+ <symbol> ; </symbol>
+</returnStatement>
+</statements>
+ <symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+ <keyword> method </keyword>
+ <keyword> void </keyword>
+ <kind> subroutine </kind>
+ <identifier> run </identifier>
+ <symbol> ( </symbol>
+<parameterList>
+</parameterList>
+ <symbol> ) </symbol>
+<subroutineBody>
+ <symbol> { </symbol>
+<varDec>
+ <keyword> var </keyword>
+ <keyword> char </keyword>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> defined </status>
+ <identifier> key </identifier>
+ <symbol> ; </symbol>
+</varDec>
+<varDec>
+ <keyword> var </keyword>
+ <keyword> boolean </keyword>
+ <index> 1 </index>
+ <kind> var </kind>
+ <status> defined </status>
+ <identifier> exit </identifier>
+ <symbol> ; </symbol>
+</varDec>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 1 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> exit </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+<whileStatement>
+ <keyword> while </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> exit </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<whileStatement>
+ <keyword> while </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+<doStatement>
+ <keyword> do </keyword>
+ <kind> subroutine </kind>
+ <identifier> moveSquare </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</whileStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 1 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> exit </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> exit </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<doStatement>
+ <keyword> do </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> decSize </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<doStatement>
+ <keyword> do </keyword>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+ <symbol> . </symbol>
+ <kind> subroutine </kind>
+ <identifier> incSize </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> exit </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> square </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+ <keyword> if </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 1 </index>
+ <kind> field </kind>
+ <status> using </status>
+ <identifier> direction </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+</statements>
+ <symbol> } </symbol>
+</ifStatement>
+<whileStatement>
+ <keyword> while </keyword>
+ <symbol> ( </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ) </symbol>
+ <symbol> { </symbol>
+<statements>
+<letStatement>
+ <keyword> let </keyword>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+ <symbol> = </symbol>
+<expression>
+<term>
+ <index> 0 </index>
+ <kind> var </kind>
+ <status> using </status>
+ <identifier> key </identifier>
+</term>
+</expression>
+ <symbol> ; </symbol>
+</letStatement>
+<doStatement>
+ <keyword> do </keyword>
+ <kind> subroutine </kind>
+ <identifier> moveSquare </identifier>
+ <symbol> ( </symbol>
+<expressionList>
+</expressionList>
+ <symbol> ) </symbol>
+ <symbol> ; </symbol>
+</doStatement>
+</statements>
+ <symbol> } </symbol>
+</whileStatement>
+</statements>
+ <symbol> } </symbol>
+</whileStatement>
+<returnStatement>
+ <keyword> return </keyword>
+ <symbol> ; </symbol>
+</returnStatement>
+</statements>
+ <symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+ <symbol> } </symbol>
+</class>

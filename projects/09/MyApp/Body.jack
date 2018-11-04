@@ -1,0 +1,230 @@
+/**
+ * A graphical Snake body. 
+ * Displayed as a filled horizontal rectangle that has 
+ * a screen location, a width and a height.
+ * Has methods for drawing, erasing, moving left and right,up and down 
+ */
+class Body {
+
+   // field int x, y;           // the body's screen location
+   // field int width, height;  // the body's width and height
+    field int direction;      // direction of the body's movement (1 = left, 2 = right,3=up,4=down)
+    field int lastDirection;
+    field int lastLocation;  
+    field int locationForNextMove;
+    /** Constructs a new body with the given location and width. */
+    constructor Body new() {
+    
+        let direction = 1;
+        let lastLocation = 251;
+        let locationForNextMove = 251;
+        let lastDirection=1;
+        return this;
+    }
+
+    /** Deallocates the object's memory. */
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+
+
+
+    /** Sets the body's direction (0=stop, 1=left, 2=right,3=up,4=down). */
+    method void setDirection(int Adirection) {
+        let direction = Adirection;
+        return;
+    }
+method void snakeUpDown(int location) {
+var int i ;
+var int memAddress;
+let i = 32;
+let memAddress = 16384+location;
+	do Memory.poke(memAddress+0, -8192);
+	do Memory.poke(memAddress+32, -8192);
+	do Memory.poke(memAddress+64, -8192);
+	do Memory.poke(memAddress+96, -8192);
+	do Memory.poke(memAddress+128, -8192);
+	do Memory.poke(memAddress+160, -8192);
+	do Memory.poke(memAddress+192, -8192);
+	do Memory.poke(memAddress+224, -8192);
+	do Memory.poke(memAddress+256, -8192);
+	do Memory.poke(memAddress+288, -8192);
+	do Memory.poke(memAddress+320, -8192);
+	do Memory.poke(memAddress+352, -8192);
+	do Memory.poke(memAddress+384, -8192);
+	do Memory.poke(memAddress+416, -8192);
+	do Memory.poke(memAddress+448, -8192);
+	do Memory.poke(memAddress+480, -8192);
+
+	do Memory.poke(memAddress+480+i, -8192);
+	do Memory.poke(memAddress+480+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i+i+i, -8192);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i+i+i+i, -8192);
+
+
+     if(direction = 3)
+     {let lastLocation = location;
+        
+      let locationForNextMove = location-32-32;
+         }
+
+  if(direction = 4)
+  {
+     let  lastLocation = location+480+i+i+i+i+i+i+i+i+i+i+i+i+i+i;
+let locationForNextMove = location+480+i+i+i+i+i+i+i+i+i+i+i+i+i+i+i;
+}
+	return;
+}
+
+method void clearDotsUpDown(int location) {
+var int i ;
+
+var int memAddress;
+let memAddress = 16384+location;
+
+let i = 32;
+
+do Memory.poke(memAddress+0, 0);
+	do Memory.poke(memAddress+32, 0);
+	do Memory.poke(memAddress+64, 0);
+	do Memory.poke(memAddress+96, 0);
+	do Memory.poke(memAddress+128, 0);
+	do Memory.poke(memAddress+160, 0);
+	do Memory.poke(memAddress+192, 0);
+	do Memory.poke(memAddress+224, 0);
+	do Memory.poke(memAddress+256, 0);
+	do Memory.poke(memAddress+288, 0);
+	do Memory.poke(memAddress+320, 0);
+	do Memory.poke(memAddress+352, 0);
+	do Memory.poke(memAddress+384, 0);
+	do Memory.poke(memAddress+416, 0);
+	do Memory.poke(memAddress+448, 0);
+	do Memory.poke(memAddress+480, 0);
+
+	do Memory.poke(memAddress+480+i, 0);
+	do Memory.poke(memAddress+480+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i+i, 0);
+	do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i+i+i, 0);
+    do Memory.poke(memAddress+480+i+i+i+i+i+i+i+i+i+i+i+i+i+i, 0);
+
+return;
+
+}
+
+method void clearDotsSideways(int location) {
+	
+var int memAddress;
+	let memAddress = 16384+location;
+	do Memory.poke(memAddress+0, 0);
+	do Memory.poke(memAddress+32, 0);
+	do Memory.poke(memAddress+64, 0);
+    do Memory.poke(memAddress+1,0);
+
+    do Memory.poke(memAddress+33,0);
+    do Memory.poke(memAddress+65,0);
+
+return;
+}
+
+method void snakeSideways(int location) {
+var int memAddress;
+	let memAddress = 16384+location;
+	
+    do Memory.poke(memAddress+0, -1);
+    do Memory.poke(memAddress+1,-1);
+	do Memory.poke(memAddress+32, -1);
+    
+    do Memory.poke(memAddress+33,-1);
+	do Memory.poke(memAddress+64, -1);
+    do Memory.poke(memAddress+65,-1);
+     
+     if(direction = 1)
+     {let lastLocation = location;
+        
+       let locationForNextMove = location-1;
+         }
+
+  if(direction = 2)
+  {
+    let  lastLocation = location+1;
+let locationForNextMove = location+2;
+  }
+
+return;
+}
+
+method int getDirection() {
+return direction;
+}
+
+    /** Moves the body one step in the bat's direction. */
+    method void move() {
+       var int startAddress;
+       if(direction = lastDirection)
+       {
+       let startAddress=locationForNextMove;
+	   }
+else 
+{
+    let startAddress = lastLocation;
+    }
+
+if (direction = 1) //left
+        {
+        do snakeSideways(startAddress);
+  do Sys.wait(500);
+      do clearDotsSideways(startAddress);
+
+   let lastDirection = 1;
+      }
+     if (direction = 2) //right
+     {
+
+  do  snakeSideways(startAddress);
+  do Sys.wait(500);
+   do  clearDotsSideways(startAddress);
+   let lastDirection = 2;
+       }
+    if(direction = 3) //up
+    {
+
+  do  snakeUpDown(startAddress);
+  
+  do Sys.wait(300);
+   do clearDotsUpDown(startAddress);
+   let lastDirection = 3;
+    }
+    if(direction=4) //down
+    {
+  
+  do  snakeUpDown(startAddress);
+
+ do Sys.wait(500);
+   do clearDotsUpDown(startAddress);
+
+   let lastDirection = 4;
+  }
+        return;
+   }
+}

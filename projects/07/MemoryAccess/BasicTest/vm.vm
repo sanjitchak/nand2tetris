@@ -1,0 +1,7 @@
+push constant 12
+pop this 0
+push constant 12
+
+pop that 0
+push that 0
+push this 0
